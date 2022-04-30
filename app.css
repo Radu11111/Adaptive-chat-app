@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    background-color: #333;
+    font-family: sans-serif;
+
+    --font-size:20px;
+    --dark-header-footer-color:#123;
+    --light-header-footer-color:#fff;
+
+    --dark-contacts-color:#234;
+    --light-contacts-color:#aaa;
+
+    --background-image-color:#345;
+
+    --status-online-color: #00cc00;
+    --status-offline-color: gray;
+    --status-5min-ago-color: #33ff33;
+    --status-10min-ago-color:#66ff66;
+    --status-15min-ago-color:#99ff99;
+
+    --status-border-color:#234;
+
+    --light-content-color:white;
+    --dark-content-color:#111;
+
+    --status-sent-arrived-color:#aaa;
+    --status--sent-seen-color:#cc00cc;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+h2,p {
+    margin: 0;
+}
+.phone {
+    background-color: #444;
+    width: 80%;
+    height: 90%;
+
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* CHAT APP STYLES */
+.app {
+    width: 100vw;
+    height: 100vh;
+    background-color: #777;
+}
+.app header,
+.app footer {
+    background-color:var(--dark-header-footer-color);
+    height: 7%;
+}
+.app main {
+    background-color:var(--dark-contacts-color);
+    height: 84%;
+    overflow-y:scroll;
+}
+.contacts {
+    /* background-color: green; */
+}
+
+/* Contacts */
+.contacts__profile {
+    height: 5em;
+    padding: 0.5em;
+    border-bottom: 1px solid;
+    width: 100%;
+    overflow-x: auto;
+
+    scroll-snap-type: mandatory;
+}
+.profile__slide {
+    width: 150%;
+    height: 100%;
+    scroll-snap-align: start;
+
+}
+.profile__avatar {
+    position: relative;
+    width: 5em; 
+    height: 5em; 
+    /* width: calc(var(--font-size) * 4); */
+    /* height: calc(var(--font-size) * 4); */
+   float: left;
+
+   background-color: var(--background-image-color);
+   border-radius:100%;
+
+}
+.profile__avatar::before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: .75em;
+    height: .75em;
+    border-radius: 100%;
+
+    top: 0.25em;
+   left: 0.25em;
+}
+
+.status--online .profile__avatar::before {
+    background-color: var(--status-online-color);
+    border: 0.1em solid var(--status-border-color);
+}
+.status--offline .profile__avatar::before {
+    background-color: var(--status-offline-color);
+    border: 0.1em solid var(--status-border-color);
+}
+.status--5min-ago .profile__avatar::before {
+    background-color: var(--status-5min-ago-color);
+    border: 0.1em solid var(--status-border-color);
+}
+.status--10min-ago .profile__avatar::before {
+    background-color: var(--status-10min-ago-color);
+    border: 0.1em solid var(--status-border-color);
+}
+.status--15min-ago .profile__avatar::before {
+    background-color: var(--status-15min-ago-color);
+    border: 0.1em solid var(--status-border-color);
+}
+.profile__avatar img {
+   width: 100%; 
+   position: absolute;
+}
+.message__content {
+    float: left;
+    color: var(--light-content-color);
+}
+.profile__actions {
+    float: right;
+    background-color: red;
+    height: 100%;
+    width: 33%;
+     text-align: center;
+     margin-right: -32%;
+     margin-top: -6em;
+
+     scroll-snap-align: end;
+}
+.profile__actions button {
+    width: 6em;
+    height: 6em;
+}
+.message__status {
+    float: right;
+    color: white;
+}
+.status--not-seen-not-sent {
+    display: none;
+}
+.status--sent {
+    color: gray;
+}
+.status-sent-arrived {
+    color:var(--status-sent-arrived-color);
+
+}
+.status--sent-seen {
+    color:var(--status--sent-seen-color);
+}
+
+/* LANDSCAPE version */
+@media (orientation:landscape) {
+    .profile__avatar {
+        margin-left: 2em;
+    }
+    .message__content {
+        margin-left: 1em;
+    }
+    .message__status {
+        margin-right: 2em;
+}
+}
+
+@media (orientation:landscape) and (min-width: 1000px) {
+    body {
+        font-size:25px;
+    }
+}
+/* hw2:         -not done
+vh--> portrait: exactly 7 contacts
+vh-->landscape:exactly 3 contacts
+     *??? Solution */

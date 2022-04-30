@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta 
+    name="viewport"
+     content="width=device-width, initial-scale=1.0, 
+     maximum-scale=1.0, minimum-scale=1.0">
+     <!-- hw1:read-meta viewport + 2 rules:
+        zoom maximum/minim 100%                     -done-->
+    <title>Chat App Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <!-- HW*(recomandations):
+        VARAIBLES (color palette)  -done 
+        css units(vmin,vmax)
+        dark /light theming      -done
+    
+        hw1:contacts list: ol vs ul?                -done
+        Consider ca în cazul maketei date s-ar potrivi ul,deoarece
+        nu conteză ordinea de distribuire a contactelor.Pe când dacă
+        vine vorba despre o listă de contacte din cadrul unui smartphone,atunci 
+        ași prefera ol,întrucât contactele vor fi repartizate în ordine alfabetică 
+        ceea ce v-a ușura căutarea,la nevoie, a contactului necesar,utilizând prima literă din denumirea contactului.
+        hw2:make the layout 1 contact:              -done
+            1.html*semantic                         -done
+            2.spaces,align,mode,units:arguments     -done
+        hw3:read more about BEM methodology         -done
+        hw4:add class status-5,10,15 min online     -done
+        hw5: message status- classes:               -done
+            -sent
+            -seen
+            -... -->
+        <!-- wrapper -->
+    <!-- <div class="phone"> -->
+    <section class="app">
+        <header></header>
+        <main>
+            <ul class="contacts">
+
+
+
+                <li class="contacts__profile status--online">
+                    <div class="profile__slide">
+                        <div class="profile__avatar">
+                            <img src="images/avataaars (1).png" alt="John Cena">
+                        </div>
+                        <div class="message__content">
+                            <h2>John Cena</h2>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <span class="message__status">
+                        <!-- Am ales div pentru a putea grupa pictogramele 
+                            de pe font awesome și pentru a le putea stiliza impreună. -->
+                         <div class="status--sent-seen">
+                            <i class="fa-solid fa-check"></i>
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <br>09:30
+                        </span>
+                        </div>
+                        <div class="profile__actions">
+                            <button>+</button>
+                            <button>-</button>
+                        </div>
+                </li>
+
+
+
+                <li class="contacts__profile status--5min-ago">
+                    <div class="profile__avatar">
+                        <img src="images/avataaars (2).png" alt="Roman Reigns">
+                    </div>
+                    <div class="message__content">
+                        <h2>Roman Reigns</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="status--not-seen-not-sent ">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 09:44</span>
+                </li>
+                <li class="contacts__profile status--10min-ago">
+                    <div class="profile__avatar">
+                        <img src="images/avataaars.png" alt="Rk bro">
+                    </div>
+                    <div class="message__content">
+                        <h2>Rk bro</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="status-sent-arrived ">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 12:30</span>
+                </li>
+                <li class="contacts__profile status--15min-ago">
+                    <div class="profile__avatar">
+                        <img src="images/avataaars (1).png" alt="John Cena">
+                    </div>
+                    <div class="message__content">
+                        <h2>John Cena</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="sent">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 09:30</span>
+                </li>
+                <li class="contacts__profile status--offline">
+                    <div class="profile__avatar">
+                    <img src="images/avataaars (2).png" alt="Roman Reigns">
+                    </div>
+                    <div class="message__content">
+                        <h2>Roman Reigns</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="status--not-seen-not-sent">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 09:44</span>
+                </li>
+                <li class="contacts__profile status--10min-ago">
+                    <div class="profile__avatar">
+                    <img src="images/avataaars.png" alt="Rk bro">
+                    </div>
+                    <div class="message__content">
+                        <h2>Rk bro</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="status--sent-seen">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 12:30</span>
+                </li>
+                <li class="contacts__profile status--online">
+                    <div class="profile__avatar">
+                    <img src="images/avataaars (1).png" alt="John Cena">
+                    </div>
+                    <div class="message__content">
+                        <h2>John Cena</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="status--not-seen-not-sent ">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 09:30</span>
+                </li>
+                <li class="contacts__profile status--15min-ago">
+                    <div class="profile__avatar">
+                    <img src="images/avataaars (2).png" alt="Roman Reigns">
+                    </div>
+                    <div class="message__content">
+                        <h2>Roman Reigns</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="status--sent-seen ">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 09:44</span>
+                </li>
+                <li class="contacts__profile status--5min-ago">
+                    <div class="profile__avatar">
+                    <img src="images/avataaars.png" alt="Rk bro">
+                    </div>
+                    <div class="message__content">
+                        <h2>Rk bro</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="message__status">
+                    <div class="sent">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <br> 12:30</span>
+                </li>
+            </ul>
+        </main>
+        <footer></footer>
+    </section>
+    <!-- </div> -->
+    
+</body>
+</html>
